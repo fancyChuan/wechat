@@ -13,3 +13,4 @@ __pycache__/
 # something not to commit
 *.pkl
 *.swp
+config.py

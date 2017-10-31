@@ -7,6 +7,8 @@ from xml.etree import ElementTree as ET
 import itchat
 from itchat.content import *
 
+from config import *
+
 #import sys
 #reload(sys)
 #sys.setdefaultencoding('utf-8')
@@ -34,7 +36,7 @@ def extract_all(msg):
     return data
 
 def write2mysql(datas):
-    conn = pymysql.connect(host='115.28.105.44', port=3306, user='fancy', password='fancyChuan',
+    conn = pymysql.connect(host=MYSQL_HOST, port=MYSQL_PORT, user=MYSQL_USER, password=MYSQL_PSW,
                            charset='UTF8', database='monitor')
     cur = conn.cursor()
     sql = "insert into mpsharing(mp_name, title, url, from_user_name, to_user_name, createtime) VALUES(%s, %s, %s, %s, %s, %s)"
